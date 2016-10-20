@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		544DC8ED1DB8613000106751 /* PVSBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 544DC8EC1DB8613000106751 /* PVSBackgroundView.m */; };
+		544DC8F61DB8646E00106751 /* PVSCurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 544DC8F51DB8646E00106751 /* PVSCurrentViewController.m */; };
+		54C588661DB8CE3900AA5899 /* UIView+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C588651DB8CE3900AA5899 /* UIView+Utility.m */; };
+		54E89C3B1DB779A70053B643 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E89C3A1DB779A70053B643 /* main.m */; };
+		54E89C3E1DB779A70053B643 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E89C3D1DB779A70053B643 /* AppDelegate.m */; };
+		54E89C461DB779A70053B643 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54E89C451DB779A70053B643 /* Assets.xcassets */; };
+		54E89C491DB779A70053B643 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54E89C471DB779A70053B643 /* LaunchScreen.storyboard */; };
+		54E89C541DB779A70053B643 /* PortraitViewSwitchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E89C531DB779A70053B643 /* PortraitViewSwitchTests.m */; };
+		54E89C5F1DB779A70053B643 /* PortraitViewSwitchUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E89C5E1DB779A70053B643 /* PortraitViewSwitchUITests.m */; };
+		54E89C6E1DB77C2F0053B643 /* PVSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E89C6D1DB77C2F0053B643 /* PVSMainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		54E89C501DB779A70053B643 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54E89C2E1DB779A70053B643 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54E89C351DB779A70053B643;
+			remoteInfo = PortraitViewSwitch;
+		};
+		54E89C5B1DB779A70053B643 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 54E89C2E1DB779A70053B643 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 54E89C351DB779A70053B643;
+			remoteInfo = PortraitViewSwitch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		544DC8EB1DB8613000106751 /* PVSBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSBackgroundView.h; sourceTree = "<group>"; };
+		544DC8EC1DB8613000106751 /* PVSBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSBackgroundView.m; sourceTree = "<group>"; };
+		544DC8F41DB8646E00106751 /* PVSCurrentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSCurrentViewController.h; sourceTree = "<group>"; };
+		544DC8F51DB8646E00106751 /* PVSCurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSCurrentViewController.m; sourceTree = "<group>"; };
+		54C588641DB8CE3900AA5899 /* UIView+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utility.h"; sourceTree = "<group>"; };
+		54C588651DB8CE3900AA5899 /* UIView+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utility.m"; sourceTree = "<group>"; };
+		54E89C361DB779A70053B643 /* PortraitViewSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PortraitViewSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		54E89C3A1DB779A70053B643 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		54E89C3C1DB779A70053B643 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		54E89C3D1DB779A70053B643 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		54E89C451DB779A70053B643 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		54E89C481DB779A70053B643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		54E89C4A1DB779A70053B643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54E89C4F1DB779A70053B643 /* PortraitViewSwitchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PortraitViewSwitchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54E89C531DB779A70053B643 /* PortraitViewSwitchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PortraitViewSwitchTests.m; sourceTree = "<group>"; };
+		54E89C551DB779A70053B643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54E89C5A1DB779A70053B643 /* PortraitViewSwitchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PortraitViewSwitchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		54E89C5E1DB779A70053B643 /* PortraitViewSwitchUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PortraitViewSwitchUITests.m; sourceTree = "<group>"; };
+		54E89C601DB779A70053B643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54E89C6C1DB77C2F0053B643 /* PVSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSMainViewController.h; sourceTree = "<group>"; };
+		54E89C6D1DB77C2F0053B643 /* PVSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSMainViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		54E89C331DB779A70053B643 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E89C4C1DB779A70053B643 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E89C571DB779A70053B643 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		544DC8EE1DB8616100106751 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		544DC8EF1DB8616700106751 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		544DC8F01DB8616C00106751 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		54E89C2D1DB779A70053B643 = {
+			isa = PBXGroup;
+			children = (
+				54E89C381DB779A70053B643 /* PortraitViewSwitch */,
+				54E89C521DB779A70053B643 /* PortraitViewSwitchTests */,
+				54E89C5D1DB779A70053B643 /* PortraitViewSwitchUITests */,
+				54E89C371DB779A70053B643 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		54E89C371DB779A70053B643 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				54E89C361DB779A70053B643 /* PortraitViewSwitch.app */,
+				54E89C4F1DB779A70053B643 /* PortraitViewSwitchTests.xctest */,
+				54E89C5A1DB779A70053B643 /* PortraitViewSwitchUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		54E89C381DB779A70053B643 /* PortraitViewSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				544DC8F01DB8616C00106751 /* Controller */,
+				544DC8EF1DB8616700106751 /* View */,
+				544DC8EE1DB8616100106751 /* Model */,
+				54E89C3C1DB779A70053B643 /* AppDelegate.h */,
+				54E89C3D1DB779A70053B643 /* AppDelegate.m */,
+				544DC8EB1DB8613000106751 /* PVSBackgroundView.h */,
+				544DC8EC1DB8613000106751 /* PVSBackgroundView.m */,
+				544DC8F41DB8646E00106751 /* PVSCurrentViewController.h */,
+				544DC8F51DB8646E00106751 /* PVSCurrentViewController.m */,
+				54E89C6C1DB77C2F0053B643 /* PVSMainViewController.h */,
+				54E89C6D1DB77C2F0053B643 /* PVSMainViewController.m */,
+				54C588641DB8CE3900AA5899 /* UIView+Utility.h */,
+				54C588651DB8CE3900AA5899 /* UIView+Utility.m */,
+				54E89C451DB779A70053B643 /* Assets.xcassets */,
+				54E89C471DB779A70053B643 /* LaunchScreen.storyboard */,
+				54E89C4A1DB779A70053B643 /* Info.plist */,
+				54E89C391DB779A70053B643 /* Supporting Files */,
+			);
+			path = PortraitViewSwitch;
+			sourceTree = "<group>";
+		};
+		54E89C391DB779A70053B643 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				54E89C3A1DB779A70053B643 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		54E89C521DB779A70053B643 /* PortraitViewSwitchTests */ = {
+			isa = PBXGroup;
+			children = (
+				54E89C531DB779A70053B643 /* PortraitViewSwitchTests.m */,
+				54E89C551DB779A70053B643 /* Info.plist */,
+			);
+			path = PortraitViewSwitchTests;
+			sourceTree = "<group>";
+		};
+		54E89C5D1DB779A70053B643 /* PortraitViewSwitchUITests */ = {
+			isa = PBXGroup;
+			children = (
+				54E89C5E1DB779A70053B643 /* PortraitViewSwitchUITests.m */,
+				54E89C601DB779A70053B643 /* Info.plist */,
+			);
+			path = PortraitViewSwitchUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		54E89C351DB779A70053B643 /* PortraitViewSwitch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54E89C631DB779A70053B643 /* Build configuration list for PBXNativeTarget "PortraitViewSwitch" */;
+			buildPhases = (
+				54E89C321DB779A70053B643 /* Sources */,
+				54E89C331DB779A70053B643 /* Frameworks */,
+				54E89C341DB779A70053B643 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PortraitViewSwitch;
+			productName = PortraitViewSwitch;
+			productReference = 54E89C361DB779A70053B643 /* PortraitViewSwitch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		54E89C4E1DB779A70053B643 /* PortraitViewSwitchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54E89C661DB779A70053B643 /* Build configuration list for PBXNativeTarget "PortraitViewSwitchTests" */;
+			buildPhases = (
+				54E89C4B1DB779A70053B643 /* Sources */,
+				54E89C4C1DB779A70053B643 /* Frameworks */,
+				54E89C4D1DB779A70053B643 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54E89C511DB779A70053B643 /* PBXTargetDependency */,
+			);
+			name = PortraitViewSwitchTests;
+			productName = PortraitViewSwitchTests;
+			productReference = 54E89C4F1DB779A70053B643 /* PortraitViewSwitchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		54E89C591DB779A70053B643 /* PortraitViewSwitchUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 54E89C691DB779A70053B643 /* Build configuration list for PBXNativeTarget "PortraitViewSwitchUITests" */;
+			buildPhases = (
+				54E89C561DB779A70053B643 /* Sources */,
+				54E89C571DB779A70053B643 /* Frameworks */,
+				54E89C581DB779A70053B643 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				54E89C5C1DB779A70053B643 /* PBXTargetDependency */,
+			);
+			name = PortraitViewSwitchUITests;
+			productName = PortraitViewSwitchUITests;
+			productReference = 54E89C5A1DB779A70053B643 /* PortraitViewSwitchUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		54E89C2E1DB779A70053B643 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = " bolizhou";
+				TargetAttributes = {
+					54E89C351DB779A70053B643 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = R8SXHLJ4HE;
+						ProvisioningStyle = Automatic;
+					};
+					54E89C4E1DB779A70053B643 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 54E89C351DB779A70053B643;
+					};
+					54E89C591DB779A70053B643 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 54E89C351DB779A70053B643;
+					};
+				};
+			};
+			buildConfigurationList = 54E89C311DB779A70053B643 /* Build configuration list for PBXProject "PortraitViewSwitch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 54E89C2D1DB779A70053B643;
+			productRefGroup = 54E89C371DB779A70053B643 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				54E89C351DB779A70053B643 /* PortraitViewSwitch */,
+				54E89C4E1DB779A70053B643 /* PortraitViewSwitchTests */,
+				54E89C591DB779A70053B643 /* PortraitViewSwitchUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		54E89C341DB779A70053B643 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54E89C491DB779A70053B643 /* LaunchScreen.storyboard in Resources */,
+				54E89C461DB779A70053B643 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E89C4D1DB779A70053B643 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E89C581DB779A70053B643 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		54E89C321DB779A70053B643 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54E89C3E1DB779A70053B643 /* AppDelegate.m in Sources */,
+				54C588661DB8CE3900AA5899 /* UIView+Utility.m in Sources */,
+				544DC8F61DB8646E00106751 /* PVSCurrentViewController.m in Sources */,
+				54E89C6E1DB77C2F0053B643 /* PVSMainViewController.m in Sources */,
+				544DC8ED1DB8613000106751 /* PVSBackgroundView.m in Sources */,
+				54E89C3B1DB779A70053B643 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E89C4B1DB779A70053B643 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54E89C541DB779A70053B643 /* PortraitViewSwitchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54E89C561DB779A70053B643 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				54E89C5F1DB779A70053B643 /* PortraitViewSwitchUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		54E89C511DB779A70053B643 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54E89C351DB779A70053B643 /* PortraitViewSwitch */;
+			targetProxy = 54E89C501DB779A70053B643 /* PBXContainerItemProxy */;
+		};
+		54E89C5C1DB779A70053B643 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 54E89C351DB779A70053B643 /* PortraitViewSwitch */;
+			targetProxy = 54E89C5B1DB779A70053B643 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		54E89C471DB779A70053B643 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				54E89C481DB779A70053B643 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		54E89C611DB779A70053B643 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		54E89C621DB779A70053B643 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		54E89C641DB779A70053B643 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R8SXHLJ4HE;
+				INFOPLIST_FILE = PortraitViewSwitch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bolizhou.SOHUTest.PortraitViewSwitch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		54E89C651DB779A70053B643 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = R8SXHLJ4HE;
+				INFOPLIST_FILE = PortraitViewSwitch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bolizhou.SOHUTest.PortraitViewSwitch;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		54E89C671DB779A70053B643 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PortraitViewSwitchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bolizhou.SOHUTest.PortraitViewSwitchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PortraitViewSwitch.app/PortraitViewSwitch";
+			};
+			name = Debug;
+		};
+		54E89C681DB779A70053B643 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PortraitViewSwitchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bolizhou.SOHUTest.PortraitViewSwitchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PortraitViewSwitch.app/PortraitViewSwitch";
+			};
+			name = Release;
+		};
+		54E89C6A1DB779A70053B643 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PortraitViewSwitchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bolizhou.SOHUTest.PortraitViewSwitchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PortraitViewSwitch;
+			};
+			name = Debug;
+		};
+		54E89C6B1DB779A70053B643 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PortraitViewSwitchUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bolizhou.SOHUTest.PortraitViewSwitchUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PortraitViewSwitch;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		54E89C311DB779A70053B643 /* Build configuration list for PBXProject "PortraitViewSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54E89C611DB779A70053B643 /* Debug */,
+				54E89C621DB779A70053B643 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54E89C631DB779A70053B643 /* Build configuration list for PBXNativeTarget "PortraitViewSwitch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54E89C641DB779A70053B643 /* Debug */,
+				54E89C651DB779A70053B643 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54E89C661DB779A70053B643 /* Build configuration list for PBXNativeTarget "PortraitViewSwitchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54E89C671DB779A70053B643 /* Debug */,
+				54E89C681DB779A70053B643 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		54E89C691DB779A70053B643 /* Build configuration list for PBXNativeTarget "PortraitViewSwitchUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				54E89C6A1DB779A70053B643 /* Debug */,
+				54E89C6B1DB779A70053B643 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 54E89C2E1DB779A70053B643 /* Project object */;
+}

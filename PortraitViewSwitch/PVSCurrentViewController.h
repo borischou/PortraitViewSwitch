@@ -15,4 +15,6 @@
 @property (strong, nonatomic) PVSBackgroundView *bottomView;
 @property (strong, nonatomic) PVSBackgroundView *middleView;
 
+- (void)rearrangeSubviewLayoutFromState:(PVSCurrentViewState)state;
+
 @end

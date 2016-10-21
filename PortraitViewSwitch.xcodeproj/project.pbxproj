@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		544DC8ED1DB8613000106751 /* PVSBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 544DC8EC1DB8613000106751 /* PVSBackgroundView.m */; };
 		544DC8F61DB8646E00106751 /* PVSCurrentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 544DC8F51DB8646E00106751 /* PVSCurrentViewController.m */; };
+		54A98EED1DB9BB6700979F1F /* 3.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 54A98EEA1DB9BB6700979F1F /* 3.PNG */; };
+		54A98EEE1DB9BB6700979F1F /* 2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 54A98EEB1DB9BB6700979F1F /* 2.PNG */; };
+		54A98EEF1DB9BB6700979F1F /* 1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 54A98EEC1DB9BB6700979F1F /* 1.PNG */; };
 		54C588661DB8CE3900AA5899 /* UIView+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C588651DB8CE3900AA5899 /* UIView+Utility.m */; };
 		54E89C3B1DB779A70053B643 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E89C3A1DB779A70053B643 /* main.m */; };
 		54E89C3E1DB779A70053B643 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E89C3D1DB779A70053B643 /* AppDelegate.m */; };
@@ -41,6 +44,9 @@
 		544DC8EC1DB8613000106751 /* PVSBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSBackgroundView.m; sourceTree = "<group>"; };
 		544DC8F41DB8646E00106751 /* PVSCurrentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PVSCurrentViewController.h; sourceTree = "<group>"; };
 		544DC8F51DB8646E00106751 /* PVSCurrentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PVSCurrentViewController.m; sourceTree = "<group>"; };
+		54A98EEA1DB9BB6700979F1F /* 3.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.PNG; sourceTree = "<group>"; };
+		54A98EEB1DB9BB6700979F1F /* 2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.PNG; sourceTree = "<group>"; };
+		54A98EEC1DB9BB6700979F1F /* 1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.PNG; sourceTree = "<group>"; };
 		54C588641DB8CE3900AA5899 /* UIView+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utility.h"; sourceTree = "<group>"; };
 		54C588651DB8CE3900AA5899 /* UIView+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utility.m"; sourceTree = "<group>"; };
 		54E89C361DB779A70053B643 /* PortraitViewSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PortraitViewSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +151,9 @@
 				54E89C451DB779A70053B643 /* Assets.xcassets */,
 				54E89C471DB779A70053B643 /* LaunchScreen.storyboard */,
 				54E89C4A1DB779A70053B643 /* Info.plist */,
+				54A98EEA1DB9BB6700979F1F /* 3.PNG */,
+				54A98EEB1DB9BB6700979F1F /* 2.PNG */,
+				54A98EEC1DB9BB6700979F1F /* 1.PNG */,
 				54E89C391DB779A70053B643 /* Supporting Files */,
 			);
 			path = PortraitViewSwitch;
@@ -283,7 +292,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A98EED1DB9BB6700979F1F /* 3.PNG in Resources */,
 				54E89C491DB779A70053B643 /* LaunchScreen.storyboard in Resources */,
+				54A98EEF1DB9BB6700979F1F /* 1.PNG in Resources */,
+				54A98EEE1DB9BB6700979F1F /* 2.PNG in Resources */,
 				54E89C461DB779A70053B643 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

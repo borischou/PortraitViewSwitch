@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, PVSCurrentViewState)
+{
+    PVSCurrentViewStateMiddle,
+    PVSCurrentViewStateTop,
+    PVSCurrentViewStateBottom,
+    PVSCurrentViewStateUnknown
+};
+
 @interface PVSBackgroundView : UIView
+
+- (void)setImage:(UIImage *)image;
+
+- (UIImage *)image;
 
 @end

@@ -13,27 +13,26 @@
 #define Width_Screen [UIScreen mainScreen].bounds.size.width
 #define Height_Screen [UIScreen mainScreen].bounds.size.height
 
-#define Position_Default_Rect CGRectMake(0, -Height_Screen, Width_Screen, 3*Height_Screen)
-#define Position_Bottom_Rect CGRectMake(0, 0, Width_Screen, Height_Screen)
-#define Position_Top_Rect CGRectMake(0, -2*Height_Screen, Width_Screen, Height_Screen)
+#define Frame_Default_Rect CGRectMake(0, -Height_Screen, Width_Screen, 3*Height_Screen)
+#define Frame_Top_Rect CGRectMake(0, 0, Width_Screen, 3*Height_Screen)
+#define Frame_Bottom_Rect CGRectMake(0, -2*Height_Screen, Width_Screen, 3*Height_Screen)
+
+#define CenterY_Top_Current Height_Screen/2
+#define CenterY_Middle_Current Height_Screen/2+Height_Screen
+#define CenterY_Bottom_Current Height_Screen/2+2*Height_Screen
 
 #define Screen_Center_Y [UIScreen mainScreen].bounds.size.height/2
 
-typedef NS_ENUM(NSInteger, PVSCurrentViewState)
-{
-    PVSCurrentViewStateMiddle,
-    PVSCurrentViewStateTop,
-    PVSCurrentViewStateBottom,
-    PVSCurrentViewStateUnknown
-};
+#define Switch_Trigger_Min_Height [UIScreen mainScreen].bounds.size.height/2
 
 @interface PVSMainViewController ()
 
 @property (strong, nonatomic) PVSCurrentViewController *currentViewController;
-@property (strong, nonatomic) UIView *currentView, *topView, *bottomView, *middleView;
+@property (strong, nonatomic) UIView *currentView;
+@property (strong, nonatomic) PVSBackgroundView *topView, *bottomView, *middleView;
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 @property (assign, nonatomic) PVSCurrentViewState currentViewState;
-@property (assign, nonatomic) CGPoint currentCenter;
+@property (assign, nonatomic) CGFloat currentCenterY;
 
 @end
 
@@ -45,7 +44,7 @@ typedef NS_ENUM(NSInteger, PVSCurrentViewState)
     [self loadCurrentViewController];
     [self configPanGesture];
     self.currentViewState = PVSCurrentViewStateMiddle;
-    self.currentCenter = self.currentView.center;
+    self.currentCenterY = self.currentView.center.y;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -56,12 +55,21 @@ typedef NS_ENUM(NSInteger, PVSCurrentViewState)
 - (void)loadCurrentViewController
 {
     self.currentViewController = [[PVSCurrentViewController alloc] init];
-    self.currentViewController.view.frame = Position_Default_Rect;
+    self.currentViewController.view.frame = Frame_Default_Rect;
     self.currentView = self.currentViewController.view;
     self.middleView = self.currentViewController.middleView;
     self.topView = self.currentViewController.topView;
     self.bottomView = self.currentViewController.bottomView;
     [self.view addSubview:self.currentViewController.view];
+    
+    [self loadInitialImages];
+}
+
+- (void)loadInitialImages
+{
+    [self.middleView setImage:[UIImage imageNamed:@"1.PNG"]];
+    [self.topView setImage:[UIImage imageNamed:@"2.PNG"]];
+    [self.bottomView setImage:[UIImage imageNamed:@"3.PNG"]];
 }
 
 - (void)configPanGesture
@@ -101,8 +109,8 @@ typedef NS_ENUM(NSInteger, PVSCurrentViewState)
 
 - (void)panGestureEndedCallback:(UIPanGestureRecognizer *)pan
 {
-    CGFloat distance = pan.view.center.y-self.currentCenter.y;
-    if (fabs(distance) > 80)
+    CGFloat distance = pan.view.center.y-self.currentCenterY;
+    if (fabs(distance) >= Switch_Trigger_Min_Height)
     {
         PVSCurrentViewState state = self.currentViewState;
         CGPoint offset = CGPointZero;
@@ -142,18 +150,36 @@ typedef NS_ENUM(NSInteger, PVSCurrentViewState)
                 self.currentViewState = PVSCurrentViewStateMiddle;
             }
         }
-//        __weak id weakSelf = self;
-//        [self.currentView setContentOffset:offset animated:YES duration:0.3 completion:^(BOOL finished)
-//        {
-//            __strong id strongSelf = weakSelf;
-//            [strongSelf resetPositionForCurrentView];
-//        }];
-        [self.currentView setContentOffset:offset animated:YES];
-        self.currentCenter = pan.view.center;
+        
+        __weak id weakSelf = self;
+        [self.currentView setContentOffset:offset animated:YES duration:0.3 completion:^(BOOL finished)
+        {
+            __strong PVSMainViewController *strongSelf = weakSelf;
+            //[strongSelf switchBackgroundViewToMiddle];
+            //[strongSelf resetPositionForCurrentView];
+            //[strongSelf resetPositionState:PVSCurrentViewStateMiddle];
+            strongSelf.currentCenterY = strongSelf.currentView.center.y;
+        }];
     }
     else
     {
-        [self resetPositionForCurrentViewAnimated:YES];
+        [self resetCurrentPostionAnimated:YES];
+    }
+}
+
+- (void)switchBackgroundViewToMiddle
+{
+    if (self.currentViewState == PVSCurrentViewStateBottom)
+    {
+        [self.currentViewController rearrangeSubviewLayoutFromState:PVSCurrentViewStateMiddle];
+    }
+    if (self.currentViewState == PVSCurrentViewStateTop)
+    {
+        [self.currentViewController rearrangeSubviewLayoutFromState:PVSCurrentViewStateBottom];
+    }
+    if (self.currentViewState == PVSCurrentViewStateMiddle)
+    {
+        [self.currentViewController rearrangeSubviewLayoutFromState:PVSCurrentViewStateTop];
     }
 }
 
@@ -164,29 +190,56 @@ typedef NS_ENUM(NSInteger, PVSCurrentViewState)
     [pan setTranslation:CGPointZero inView:pan.view];
 }
 
-- (void)resetPositionForCurrentViewAnimated:(BOOL)animated
+- (void)resetCurrentPostionAnimated:(BOOL)animated
 {
-    if (self.currentView == nil)
-    {
-        return;
-    }
     if (animated)
     {
-        [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-            self.currentView.frame = Position_Default_Rect;
-        } completion:^(BOOL finished) {
-            
+        [UIView animateWithDuration:0.2 animations:^{
+            [self resetCurrentPosition];
         }];
     }
     else
     {
-        self.currentView.frame = Position_Default_Rect;
+        [self resetCurrentPosition];
     }
 }
 
-- (void)resetPositionForCurrentView
+- (void)resetPositionState:(PVSCurrentViewState)state
 {
-    [self resetPositionForCurrentViewAnimated:NO];
+    self.currentViewState = state;
+    switch (state)
+    {
+        case PVSCurrentViewStateTop:
+            self.currentView.frame = Frame_Top_Rect;
+            break;
+        case PVSCurrentViewStateBottom:
+            self.currentView.frame = Frame_Bottom_Rect;
+            break;
+        case PVSCurrentViewStateMiddle:
+            self.currentView.frame = Frame_Default_Rect;
+            break;
+        default:
+            break;
+    }
+}
+
+- (void)resetCurrentPosition
+{
+    PVSCurrentViewState state = self.currentViewState;
+    switch (state)
+    {
+        case PVSCurrentViewStateTop:
+            self.currentView.frame = Frame_Top_Rect;
+            break;
+        case PVSCurrentViewStateBottom:
+            self.currentView.frame = Frame_Bottom_Rect;
+            break;
+        case PVSCurrentViewStateMiddle:
+            self.currentView.frame = Frame_Default_Rect;
+            break;
+        default:
+            break;
+    }
 }
 
 @end

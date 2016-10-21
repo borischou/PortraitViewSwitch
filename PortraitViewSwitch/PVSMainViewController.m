@@ -33,6 +33,8 @@
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 @property (assign, nonatomic) PVSCurrentViewState currentViewState;
 @property (assign, nonatomic) CGFloat currentCenterY;
+@property (strong, nonatomic) NSMutableArray<UIImage *> *items;
+@property (strong, nonatomic) UIImage *currentMiddleImage, *currentTopImage, *currentBottomImage;
 
 @end
 
@@ -43,13 +45,16 @@
     [super viewDidLoad];
     [self loadCurrentViewController];
     [self configPanGesture];
+    [self initItems];
     self.currentViewState = PVSCurrentViewStateMiddle;
     self.currentCenterY = self.currentView.center.y;
 }
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)initItems
 {
-    [super viewWillAppear:animated];
+    self.items = @[[UIImage imageNamed:@"1.PNG"],
+                   [UIImage imageNamed:@"2.PNG"],
+                   [UIImage imageNamed:@"3.PNG"]].mutableCopy;
 }
 
 - (void)loadCurrentViewController
@@ -70,6 +75,10 @@
     [self.middleView setImage:[UIImage imageNamed:@"1.PNG"]];
     [self.topView setImage:[UIImage imageNamed:@"2.PNG"]];
     [self.bottomView setImage:[UIImage imageNamed:@"3.PNG"]];
+    
+    self.currentTopImage = self.topView.image;
+    self.currentBottomImage = self.bottomView.image;
+    self.currentMiddleImage = self.middleView.image;
 }
 
 - (void)configPanGesture
@@ -109,13 +118,15 @@
 
 - (void)panGestureEndedCallback:(UIPanGestureRecognizer *)pan
 {
-    CGFloat distance = pan.view.center.y-self.currentCenterY;
+    CGFloat distance = pan.view.center.y-self.currentCenterY; //滑动的相对位移
     if (fabs(distance) >= Switch_Trigger_Min_Height)
     {
         PVSCurrentViewState state = self.currentViewState;
         CGPoint offset = CGPointZero;
+        BOOL isDown;
         if (distance > 0) //向下滑
         {
+            isDown = YES;
             if (state == PVSCurrentViewStateMiddle)
             {
                 offset = CGPointMake(0, 0);
@@ -134,6 +145,7 @@
         }
         else
         {
+            isDown = NO;
             if (state == PVSCurrentViewStateMiddle)
             {
                 offset = CGPointMake(0, -2*Height_Screen);
@@ -155,15 +167,83 @@
         [self.currentView setContentOffset:offset animated:YES duration:0.3 completion:^(BOOL finished)
         {
             __strong PVSMainViewController *strongSelf = weakSelf;
-            //[strongSelf switchBackgroundViewToMiddle];
-            //[strongSelf resetPositionForCurrentView];
-            //[strongSelf resetPositionState:PVSCurrentViewStateMiddle];
-            strongSelf.currentCenterY = strongSelf.currentView.center.y;
+            [strongSelf replaceItemBeforeSwitchAfterScrolling:isDown];
+            [strongSelf resetPositionState:PVSCurrentViewStateMiddle];
+            [strongSelf replaceItemAfterSwitchAfterScrolling:isDown];
         }];
     }
     else
     {
         [self resetCurrentPostionAnimated:YES];
+    }
+}
+
+- (void)replaceItemBeforeSwitchAfterScrolling:(BOOL)isDown //YES: down NO: up
+{
+    if (isDown)
+    {
+        [self replaceItemInView:self.middleView withNewItem:self.currentTopImage];
+        NSInteger index = [self.items indexOfObject:self.currentMiddleImage]+1;
+        if (self.items.count > index)
+        {
+            UIImage *image = [self.items objectAtIndex:index];
+            [self replaceItemInView:self.bottomView withNewItem:image];
+        }
+        
+    }
+    else
+    {
+        [self replaceItemInView:self.middleView withNewItem:self.currentBottomImage];
+        NSInteger index = [self.items indexOfObject:self.currentMiddleImage]-1;
+        if (self.items.count > index)
+        {
+            UIImage *image = [self.items objectAtIndex:index];
+            [self replaceItemInView:self.topView withNewItem:image];
+        }
+    }
+}
+
+- (void)replaceItemAfterSwitchAfterScrolling:(BOOL)isDown //YES: down NO: up
+{
+    if (isDown)
+    {
+        NSInteger index = [self.items indexOfObject:self.currentMiddleImage]-1;
+        if (self.items.count > index)
+        {
+            UIImage *image = [self.items objectAtIndex:index];
+            [self replaceItemInView:self.topView withNewItem:image];
+        }
+    }
+    else
+    {
+        NSInteger index = [self.items indexOfObject:self.currentMiddleImage]+1;
+        if (self.items.count > index)
+        {
+            UIImage *image = [self.items objectAtIndex:index];
+            [self replaceItemInView:self.bottomView withNewItem:image];
+        }
+    }
+}
+
+- (void)replaceItemInView:(PVSBackgroundView *)view withNewItem:(UIImage *)image
+{
+    if (view == nil || image == nil)
+    {
+        return;
+    }
+    [view setImage:image];
+    
+    if ([view isEqual:self.bottomView])
+    {
+        self.currentBottomImage = image;
+    }
+    else if ([view isEqual:self.topView])
+    {
+        self.currentTopImage = image;
+    }
+    else if ([view isEqual:self.middleView])
+    {
+        self.currentMiddleImage = image;
     }
 }
 
@@ -221,6 +301,7 @@
         default:
             break;
     }
+    self.currentCenterY = self.currentView.center.y;
 }
 
 - (void)resetCurrentPosition

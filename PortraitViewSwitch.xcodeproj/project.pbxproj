@@ -12,6 +12,7 @@
 		54A98EED1DB9BB6700979F1F /* 3.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 54A98EEA1DB9BB6700979F1F /* 3.PNG */; };
 		54A98EEE1DB9BB6700979F1F /* 2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 54A98EEB1DB9BB6700979F1F /* 2.PNG */; };
 		54A98EEF1DB9BB6700979F1F /* 1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 54A98EEC1DB9BB6700979F1F /* 1.PNG */; };
+		54A98EF11DBA2D2D00979F1F /* 4.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 54A98EF01DBA2D2D00979F1F /* 4.PNG */; };
 		54C588661DB8CE3900AA5899 /* UIView+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 54C588651DB8CE3900AA5899 /* UIView+Utility.m */; };
 		54E89C3B1DB779A70053B643 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E89C3A1DB779A70053B643 /* main.m */; };
 		54E89C3E1DB779A70053B643 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 54E89C3D1DB779A70053B643 /* AppDelegate.m */; };
@@ -47,6 +48,7 @@
 		54A98EEA1DB9BB6700979F1F /* 3.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.PNG; sourceTree = "<group>"; };
 		54A98EEB1DB9BB6700979F1F /* 2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.PNG; sourceTree = "<group>"; };
 		54A98EEC1DB9BB6700979F1F /* 1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.PNG; sourceTree = "<group>"; };
+		54A98EF01DBA2D2D00979F1F /* 4.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.PNG; sourceTree = "<group>"; };
 		54C588641DB8CE3900AA5899 /* UIView+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Utility.h"; sourceTree = "<group>"; };
 		54C588651DB8CE3900AA5899 /* UIView+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Utility.m"; sourceTree = "<group>"; };
 		54E89C361DB779A70053B643 /* PortraitViewSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PortraitViewSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +153,7 @@
 				54E89C451DB779A70053B643 /* Assets.xcassets */,
 				54E89C471DB779A70053B643 /* LaunchScreen.storyboard */,
 				54E89C4A1DB779A70053B643 /* Info.plist */,
+				54A98EF01DBA2D2D00979F1F /* 4.PNG */,
 				54A98EEA1DB9BB6700979F1F /* 3.PNG */,
 				54A98EEB1DB9BB6700979F1F /* 2.PNG */,
 				54A98EEC1DB9BB6700979F1F /* 1.PNG */,
@@ -292,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54A98EF11DBA2D2D00979F1F /* 4.PNG in Resources */,
 				54A98EED1DB9BB6700979F1F /* 3.PNG in Resources */,
 				54E89C491DB779A70053B643 /* LaunchScreen.storyboard in Resources */,
 				54A98EEF1DB9BB6700979F1F /* 1.PNG in Resources */,

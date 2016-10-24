@@ -33,7 +33,7 @@
 @property (strong, nonatomic) UIPanGestureRecognizer *panGesture;
 @property (assign, nonatomic) PVSCurrentViewState currentViewState;
 @property (assign, nonatomic) CGFloat currentCenterY;
-@property (strong, nonatomic) NSMutableArray<UIImage *> *items;
+@property (strong, nonatomic) NSArray<UIImage *> *items;
 @property (strong, nonatomic) UIImage *currentMiddleImage, *currentTopImage, *currentBottomImage;
 
 @end
@@ -54,7 +54,8 @@
 {
     self.items = @[[UIImage imageNamed:@"1.PNG"],
                    [UIImage imageNamed:@"2.PNG"],
-                   [UIImage imageNamed:@"3.PNG"]].mutableCopy;
+                   [UIImage imageNamed:@"3.PNG"],
+                   [UIImage imageNamed:@"4.PNG"]].mutableCopy;
 }
 
 - (void)loadCurrentViewController
